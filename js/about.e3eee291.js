@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunksango_manager"]=self["webpackChunksango_manager"]||[]).push([[594],{8628:function(n,a,r){r.r(a),r.d(a,{default:function(){return i}});var u=r(6768);const e={class:"about"},s=(0,u.Lk)("h1",null,"三国群英传 管理系统",-1),t=[s];function c(n,a){return(0,u.uX)(),(0,u.CE)("div",e,t)}var o=r(1241);const f={},l=(0,o.A)(f,[["render",c]]);var i=l}}]);
+//# sourceMappingURL=about.e3eee291.js.map
