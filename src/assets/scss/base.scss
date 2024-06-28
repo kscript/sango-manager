@@ -1,0 +1,51 @@
+$display: (
+  inline: 'inline',
+  inline-block: 'inline-block',
+  block: 'block',
+  hidden: 'none',
+  flex: 'flex',
+  inline-flex: 'inline-flex'
+);
+
+@each $i,
+$v in $display {
+  .d-#{$i} {
+    display: #{$v};
+  }
+}
+
+$align: (
+  start: 'flex-start',
+  end: 'flex-end',
+  baseline: 'baseline',
+  center: 'center',
+  normal: 'normal'
+);
+
+@each $i,
+$v in $align {
+  .align-#{$i} {
+    align-items: #{$v};
+  }
+}
+
+$justify: (
+  start: 'flex-start',
+  end: 'flex-end',
+  center: 'center',
+  between: 'space-between',
+  normal: 'normal'
+);
+
+@each $i,
+$v in $justify {
+  .justify-#{$i} {
+    justify-content: #{$v};
+  }
+}
+
+@for $i from 0 to 13 {
+  .fl-#{$i} {
+    flex: #{$i}
+  }
+}
