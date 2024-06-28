@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunksango_manager"]=self["webpackChunksango_manager"]||[]).push([[860],{5064:function(n,a,e){e.r(a),e.d(a,{default:function(){return f}});var r=e(6768);const s={class:"manager-view"};function u(n,a){return(0,r.uX)(),(0,r.CE)("div",s)}var t=e(1241);const c={},o=(0,t.A)(c,[["render",u]]);var f=o}}]);
-//# sourceMappingURL=manager.1c02f7f9.js.map
