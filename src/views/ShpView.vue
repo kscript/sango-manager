@@ -6,7 +6,7 @@
           <template #trigger>
             <el-button type="success">
               <span class="text--white">
-                选择文件
+                选择shp文件
               </span>
             </el-button>
           </template>
@@ -51,10 +51,11 @@ const onBeforeUpload = async (file) => {
 }
 const showfileInfo = (file) => {
   active.value = active.value === file ? null : file
+  active.value && console.log(formatInfo(file))
 }
 const formatInfo = (file) => {
-  const { Width, Height, PosX, PosY } = file
-  return { name: file.file.name, Width, Height, PosX, PosY }
+  const { Width, Height, PosX, PosY, url } = file
+  return { Width, Height, PosX, PosY, url }
 }
 const onClear = () => {
   files.value = []

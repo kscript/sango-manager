@@ -6,7 +6,7 @@
           <template #trigger>
             <el-button type="success">
               <span class="text--white">
-                选择文件
+                选择ini文件
               </span>
             </el-button>
           </template>
@@ -53,6 +53,7 @@ const onBeforeUpload = async (file) => {
 }
 const showfileInfo = (file) => {
   active.value = active.value === file ? null : file
+  active.value && console.log(formatInfo(file))
 }
 const formatInfo = ({ file, ...rest }) => {
   return { ...rest }

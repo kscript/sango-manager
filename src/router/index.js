@@ -6,11 +6,12 @@ const routes = [
     path: '/',
     name: 'home',
     component: HomeView,
+    redirect: '/instruction',
     children: [
       {
-        path: '/manager',
-        name: 'manager',
-        component: () => import(/* webpackChunkName: "manager" */ '../views/ManagerView.vue')
+        path: '/instruction',
+        name: 'instruction',
+        component: () => import(/* webpackChunkName: "instruction" */ '../views/InstructionView.vue')
       },
       {
         path: '/shp',

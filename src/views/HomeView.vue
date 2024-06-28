@@ -3,13 +3,24 @@
     <sango-header></sango-header>
     <el-divider style="margin: 3px 0 0;"></el-divider>
     <el-container>
-      <el-aside width="auto" class="d-flex">
-        <section style="padding: 10px;">
+      <el-aside width="auto">
+        <section>
           <el-space alignment="start" direction="vertical">
-            <p></p>
-            <h3>工具</h3>
+            <h4>文档</h4>
+            <router-link v-for="(item, index) in start" :key="index" :to="item.path">
+              <el-button :type="route.name === item.name ? 'primary' : ''" text>
+                {{ item.text }}
+              </el-button>
+            </router-link>
+          </el-space>
+        </section>
+        <section>
+          <el-space alignment="start" direction="vertical">
+            <h4>工具</h4>
             <router-link v-for="(item, index) in tools" :key="index" :to="item.path">
-              <el-link>{{ item.text }}</el-link>
+              <el-button :type="route.name === item.name ? 'primary' : ''" text>
+                {{ item.text }}
+              </el-button>
             </router-link>
           </el-space>
         </section>
@@ -24,16 +35,14 @@
 
 <script setup>
 import { ref } from 'vue'
-const tools = ref([
+import { useRoute } from 'vue-router'
+import { tools } from './tools'
+const route = useRoute()
+const start = ref([
   {
-    name: 'shp',
-    text: 'shp文件解析',
-    path: '/shp'
-  },
-  {
-    name: 'ini',
-    text: 'ini文件解析',
-    path: '/ini'
+    name: 'instruction',
+    text: '项目说明',
+    path: '/instruction'
   }
 ])
 </script>
@@ -41,5 +50,24 @@ const tools = ref([
 <style lang="scss" scoped>
 .home {
   height: 100%;
+  .el-aside {
+    section {
+      padding: 10px 20px;
+      margin-top: 10px;
+    }
+  }
+  .el-link {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .home {
+    .el-aside {
+      section {
+        padding-left: 10px;
+        padding-right: 0;
+      }
+    }
+  }
 }
 </style>
