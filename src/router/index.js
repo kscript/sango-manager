@@ -5,7 +5,14 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: HomeView,
+    children: [
+      {
+        path: '/manager',
+        name: 'manager',
+        component: () => import(/* webpackChunkName: "manager" */ '../views/ManagerView.vue')
+      }
+    ]
   },
   {
     path: '/about',
