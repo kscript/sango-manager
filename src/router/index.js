@@ -11,6 +11,16 @@ const routes = [
         path: '/manager',
         name: 'manager',
         component: () => import(/* webpackChunkName: "manager" */ '../views/ManagerView.vue')
+      },
+      {
+        path: '/shp',
+        name: 'shp',
+        component: () => import(/* webpackChunkName: "shp" */ '../views/ShpView.vue')
+      },
+      {
+        path: '/ini',
+        name: 'ini',
+        component: () => import(/* webpackChunkName: "ini" */ '../views/IniView.vue')
       }
     ]
   },

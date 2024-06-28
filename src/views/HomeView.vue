@@ -8,12 +8,9 @@
           <el-space alignment="start" direction="vertical">
             <p></p>
             <h3>工具</h3>
-            <el-link>
-              shp文件解析
-            </el-link>
-            <el-link>
-              ini文件解析
-            </el-link>
+            <router-link v-for="(item, index) in tools" :key="index" :to="item.path">
+              <el-link>{{ item.text }}</el-link>
+            </router-link>
           </el-space>
         </section>
       </el-aside>
@@ -25,14 +22,20 @@
   </el-container>
 </template>
 
-<script>
-// @ is an alias to /src
-
-export default {
-  name: 'HomeView',
-  components: {
+<script setup>
+import { ref } from 'vue'
+const tools = ref([
+  {
+    name: 'shp',
+    text: 'shp文件解析',
+    path: '/shp'
+  },
+  {
+    name: 'ini',
+    text: 'ini文件解析',
+    path: '/ini'
   }
-}
+])
 </script>
 
 <style lang="scss" scoped>
